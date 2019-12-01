@@ -17,6 +17,7 @@ Russian PAC file generator, light version
 * GNU coreutils
 * GNU AWK (gawk)
 * sipcalc
+* Python 3.4+
 
 ### Конфигурационные файлы
 
