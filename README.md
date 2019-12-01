@@ -14,6 +14,7 @@ Russian PAC file generator, light version
 ### Зависимости
 
 * Bash
+* cURL
 * GNU coreutils
 * GNU AWK (gawk)
 * sipcalc
