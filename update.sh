@@ -14,3 +14,5 @@ LISTSIZE="$(curl -sI "$LISTLINK" | awk 'BEGIN {IGNORECASE=1;} /content-length/ {
 [[ "$LISTSIZE" != "$(stat -c '%s' temp/list_orig.csv)" ]] && echo "List 1 size differs" && exit 2
 LISTSIZE="$(curl -sI "$NXDOMAINLINK" | awk 'BEGIN {IGNORECASE=1;} /content-length/ {sub(/[ \t\r\n]+$/, "", $2); print $2}')"
 [[ "$LISTSIZE" != "$(stat -c '%s' temp/nxdomain.txt)" ]] && echo "List 2 size differs" && exit 2
+
+exit 0
