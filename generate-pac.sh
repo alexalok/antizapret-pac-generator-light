@@ -61,13 +61,6 @@ echo "  if (domains.length < 10) return \"DIRECT\"; // list is broken
      special[i][1] = nmfc(special[i][1]);
     }
 
-    for (var i in domains) {
-      for (var j in domains[i]) {
-        var regex = new RegExp('.{' + j.toString() + '}', 'g');
-        domains[i][j] = domains[i][j].match(regex);
-      }
-    }
-
     az_initialized = 1;
   }
 
@@ -83,6 +76,10 @@ echo "  if (domains.length < 10) return \"DIRECT\"; // list is broken
   var curzone = curdomain[2];
   var curarr = []; // dummy empty array
   if (domains.hasOwnProperty(curzone) && domains[curzone].hasOwnProperty(curhost.length)) {
+    if (typeof domains[curzone][curhost.length] === 'string') {
+      var regex = new RegExp('.{' + curhost.length.toString() + '}', 'g');
+      domains[curzone][curhost.length] = domains[curzone][curhost.length].match(regex);
+    }
     var curarr = domains[curzone][curhost.length];
   }
 
