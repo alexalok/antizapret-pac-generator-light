@@ -35,7 +35,7 @@
 (/casino\-/) {next}
 (/bcity\-/) {next}
 (/1x\-/) {next}
-(/1xbet/) {next}
+#(/1xbet/) {next}
 (/1xmob/) {next}
 #(/melbet/) {next}
 (/bk\-info/) {next}
@@ -104,7 +104,7 @@
 /play\-/ {next}
 /^1w.{3,4}\./ {next}
 /^mylove[0-9]{2,3}\./ {next}
-/^1x.{3,4}\./ {next}
+#/^1x.{3,4}\./ {next}
 /^mirror[0-9]{2,3}\./ {next}
 /^mob.{3,4}\./ {next}
 /^777/ {next}
