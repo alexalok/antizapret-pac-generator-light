@@ -17,7 +17,7 @@
 {sub(/\.$/, "", $1)}
 
 {
- if (/\.(ru|co|cu|com|info|net|org|gov|edu|int|mil|biz|pp|ne|msk|spb|nnov|od|in|ho|cc|dn|i|tut|v|dp|sl|ddns|dyndns|livejournal|herokuapp|azurewebsites|cloudfront|ucoz|3dn|nov|linode|amazonaws|sl-reverse|kiev|beget|kirov|akadns|scaleway)\.[^.]+$/)
+ if (/\.(ru|co|cu|com|info|net|org|gov|edu|int|mil|biz|pp|ne|msk|spb|nnov|od|in|ho|cc|dn|i|tut|v|dp|sl|ddns|dyndns|livejournal|herokuapp|azurewebsites|cloudfront|ucoz|3dn|nov|linode|amazonaws|sl-reverse|kiev|beget|kirov|akadns|scaleway|fastly)\.[^.]+$/)
   {$1 = gensub(/(.+)\.([^.]+\.[^.]+\.[^.]+$)/, "\\2", 1)}
  else
   {$1 = gensub(/(.+)\.([^.]+\.[^.]+$)/, "\\2", 1)}
