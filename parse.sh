@@ -77,3 +77,5 @@ echo "iplist_all: $(wc -l result/iplist_all.txt)" >&2
 echo "iplist_special_range: $(wc -l result/iplist_special_range.txt)" >&2
 echo "iplist_blockedbyip: $(wc -l result/iplist_blockedbyip.txt)" >&2
 echo "iplist_blockedbyip_noid2971: $(wc -l result/iplist_blockedbyip_noid2971.txt)" >&2
+
+exit 0

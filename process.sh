@@ -17,3 +17,5 @@ set -e
 #cp result/squid-whitelist-zones.conf /etc/squid/whitelistedhosts.txt
 #cp result/iplist_all.txt /etc/squid/whitelistedips.txt
 #systemctl reload squid || true
+
+exit 0
