@@ -70,6 +70,9 @@ echo "  if (domains.length < 10) return \"DIRECT\"; // list is broken
   else
     shost = host.replace(/(.+)\.([^.]+\.[^.]+$)/, \"\$2\");
 
+  // remove leading www
+  shost = shost.replace(/^www\.(.+)/, \"\$1\");
+
   var curdomain = shost.match(/(.*)\\.([^.]+\$)/);
   if (!curdomain || !curdomain[2]) {return \"DIRECT\";}
   var curhost = curdomain[1];
