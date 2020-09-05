@@ -18,7 +18,7 @@ awk -f scripts/generate-pac-domains.awk result/hostlist_zones.txt >> "$PACFILE"
 # Collapse IP list
 scripts/collapse_blockedbyip_noid2971.py
 
-echo "// This variable now excludes IP addresses blocked by 27-31-2018/Id2971-18 (since 27.06.2019)" >> "$PACFILE"
+echo "// This variable now excludes IP addresses blocked by 27-31-2018/Id2971-18 (since 27.06.2019) and 33a-5536/2019 (since 17.05.2020)" >> "$PACFILE"
 sort -Vu temp/include-ips.txt result/iplist_blockedbyip_noid2971_collapsed.txt | \
     grep -v -F -x -f temp/exclude-ips.txt | awk -f scripts/generate-pac-ipaddrs.awk >> "$PACFILE"
 
@@ -65,7 +65,7 @@ echo "  if (domains.length < 10) return \"DIRECT\"; // list is broken
   }
 
   var shost;
-  if (/\.(ru|co|cu|com|info|net|org|gov|edu|int|mil|biz|pp|ne|msk|spb|nnov|od|in|ho|cc|dn|i|tut|v|dp|sl|ddns|dyndns|livejournal|herokuapp|azurewebsites|cloudfront|ucoz|3dn|nov|linode|amazonaws|sl-reverse|kiev|beget|kirov|akadns|scaleway|fastly|hldns|appspot|my1|hwcdn)\.[^.]+$/.test(host))
+  if (/\.(ru|co|cu|com|info|net|org|gov|edu|int|mil|biz|pp|ne|msk|spb|nnov|od|in|ho|cc|dn|i|tut|v|dp|sl|ddns|dyndns|livejournal|herokuapp|azurewebsites|cloudfront|ucoz|3dn|nov|linode|amazonaws|sl-reverse|kiev|beget|kirov|akadns|scaleway|fastly|hldns|appspot|my1|hwcdn|deviantart)\.[^.]+$/.test(host))
     shost = host;
   else
     shost = host.replace(/(.+)\.([^.]+\.[^.]+$)/, \"\$2\");
@@ -93,8 +93,12 @@ echo "  if (domains.length < 10) return \"DIRECT\"; // list is broken
    iphex = parseInt(iphex[3]) + parseInt(iphex[2])*256 + parseInt(iphex[1])*65536 + parseInt(iphex[0])*16777216;
   }
   var yip = 0;
+  var rip = 0;
   if (iphex && d_ipaddr.indexOf(iphex) !== -1) {yip = 1;}
-  if (yip === 1 || curarr.indexOf(curhost) !== -1) {
+  for (var i = 0; i < special.length; i++) {
+    if (isInNet(oip, special[i][0], special[i][1])) {rip = 1; break;}
+  }
+  if (yip === 1 || rip === 1 || curarr.indexOf(curhost) !== -1) {
 
     // WARNING! WARNING! WARNING!
     // You should NOT use these proxy servers outside of PAC file!
@@ -106,9 +110,6 @@ echo "    return \"HTTPS ${PACHTTPSHOST}; PROXY ${PACPROXYHOST}; DIRECT\";" >> "
 echo "    return \"PROXY ${PACPROXYHOST}; DIRECT\";" >> "$PACFILE_NOSSL"
 
 echo "  }
-  for (var i = 0; i < special.length; i++) {
-    if (isInNet(oip, special[i][0], special[i][1])) {return \"PROXY ${PACPROXYSPECIAL}; DIRECT\";}
-  }
 
   return \"DIRECT\";
 }" | tee -a "$PACFILE" "$PACFILE_NOSSL" >/dev/null 
