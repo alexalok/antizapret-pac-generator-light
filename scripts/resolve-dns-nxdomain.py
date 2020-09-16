@@ -34,9 +34,11 @@ class AZResolver(dns.asyncresolver.Resolver):
                 await self.resolve(domain)
 
             except (dns.exception.Timeout, dns.resolver.NXDOMAIN,
-                    dns.resolver.YXDOMAIN, dns.resolver.NoAnswer,
-                    dns.resolver.NoNameservers):
+                    dns.resolver.YXDOMAIN, dns.resolver.NoNameservers):
                 return domain
+            except dns.resolver.NoAnswer:
+                # Do not thread domain as broken if the answer is empty
+                pass
 
 async def runTasksWithProgress(tasks):
     progress = 0
