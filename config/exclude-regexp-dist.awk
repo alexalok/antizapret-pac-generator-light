@@ -49,7 +49,7 @@
 /kasino/ {next}
 /depozit/ {next}
 /kazino/ {next}
-/777/ {next}
+#/777/ {next}
 /casino/ {next}
 /admiral/ {next}
 /zerkala/ {next}
@@ -107,7 +107,7 @@
 #/^1x.{3,4}\./ {next}
 /^mirror[0-9]{2,3}\./ {next}
 /^mob.{3,4}\./ {next}
-/^777/ {next}
+#/^777/ {next}
 /hydra/ {next}
 /spravok/ {next}
 /spravka/ {next}
