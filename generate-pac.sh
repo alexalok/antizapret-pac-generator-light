@@ -18,7 +18,7 @@ awk -f scripts/generate-pac-domains.awk result/hostlist_zones.txt >> "$PACFILE"
 # Collapse IP list
 scripts/collapse_blockedbyip_noid2971.py
 
-echo "// This variable now excludes IP addresses blocked by 27-31-2018/Id2971-18 (since 27.06.2019) and 33a-5536/2019 (since 17.05.2020)" >> "$PACFILE"
+echo "// This variable now excludes IP addresses blocked by 33a-5536/2019 (since 17.05.2020) and 33-4/2018 (since 14.12.2020)" >> "$PACFILE"
 sort -Vu temp/include-ips.txt result/iplist_blockedbyip_noid2971_collapsed.txt | \
     grep -v -F -x -f temp/exclude-ips.txt | awk -f scripts/generate-pac-ipaddrs.awk >> "$PACFILE"
 
