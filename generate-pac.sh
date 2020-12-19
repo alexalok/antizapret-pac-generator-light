@@ -86,7 +86,11 @@ echo "  if (domains.length < 10) return \"DIRECT\"; // list is broken
     var curarr = domains[curzone][curhost.length];
   }
 
-  var oip = dnsResolve(host);
+  var oip = false;
+  if (! host.match(/^[0-9a-fA-F:.]*$/)) {
+    // Do not resolve IPv4/v6 addresses to prevent slowdown
+    oip = dnsResolve(host);
+  }
   var iphex = \"\";
   if (oip) {
    iphex = oip.toString().split(\".\");
