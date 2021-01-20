@@ -155,3 +155,8 @@
 (/\.r\.cloudfront\.net/) {next}
 (/\*/) {next}
 (/\\/) {next} 
+/multikland\.net/ {next}
+/synchroncode\.com/ {next}
+/placehere\.link/ {next}
+/delivembed\.cc/ {next}
+/svetacdn\.in/ {next}
