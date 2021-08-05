@@ -151,7 +151,6 @@
 /seedbanda/ {next}
 #/gidonline/ {next}
 /^alco/ {next}
-/^www\.deviantart\.com$/ {next}
 (/\.r\.cloudfront\.net/) {next}
 (/\*/) {next}
 (/\\/) {next} 
