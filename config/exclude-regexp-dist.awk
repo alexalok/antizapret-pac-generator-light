@@ -45,6 +45,7 @@
 (/joycasino/) {next}
 (/goldenstar/) {next}
 /marafon/ {next}
+/olimp-tv\.org/ {print}
 /olimp/ {next}
 /kasino/ {next}
 /depozit/ {next}
