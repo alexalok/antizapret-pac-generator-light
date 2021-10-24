@@ -6,7 +6,9 @@ echo -n > "$PACFILE"
 
 # .pac header
 echo "// ProstoVPN.AntiZapret PAC-host File
-// Generated on $(date)
+// Generated on $(date), by https://bitbucket.org/anticensority/antizapret-pac-generator-light/
+// THIS FILE IS NEITHER OBFUSCATED NOR ENCRYPTED, IT'S COMPRESSED TO COMPLY WITH BROWSER PAC FILE SIZE LIMITS.
+//
 // NOTE 1: Proxy.pac file content varies on User-Agent HTTP header.
 // NOTE 2: Some badly behaving User-Agents are banned, they get empty response.
 // NOTE 3: Do not request PAC file faster than once a minute, rate limiting is applied.
