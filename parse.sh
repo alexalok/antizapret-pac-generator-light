@@ -19,6 +19,9 @@ sort -u config/include-hosts-{dist,custom}.txt > temp/include-hosts.txt
 sort -u config/include-ips-{dist,custom}.txt > temp/include-ips.txt
 sort -u temp/include-hosts.txt result/hostlist_original.txt > temp/hostlist_original_with_include.txt
 
+awk -F ';' '{split($1, a, / \| /); for (i in a) {print a[i]";"$2}}' temp/list.csv | \
+ grep -f config/exclude-hosts-by-ips-dist.txt | awk -F ';' '{print $2}' >> temp/exclude-hosts.txt
+
 awk -f scripts/getzones.awk temp/hostlist_original_with_include.txt | grep -v -F -x -f temp/exclude-hosts.txt | sort -u > result/hostlist_zones.txt
 
 if [[ "$RESOLVE_NXDOMAIN" == "yes" ]];
