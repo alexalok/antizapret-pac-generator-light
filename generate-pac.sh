@@ -73,8 +73,18 @@ echo "  if (domains.length < 10) return \"DIRECT\"; // list is broken
     shost = host.replace(/(.+)\.([^.]+\.[^.]+$)/, \"\$2\");
 
   // remove leading www
-  shost = shost.replace(/^www\.(.+)/, \"\$1\");
+  shost = shost.replace(/^www\.(.+)/, \"\$1\");" >> "$PACFILE"
 
+cp "$PACFILE" "$PACFILE_NOSSL"
+
+echo "
+  fbtw = ['twitter.com', 'twimg.com', 't.co',
+          'facebook.com', 'fbcdn.net'];
+  if (fbtw.indexOf(shost) !== -1) {
+    return \"HTTPS ${PACFBTWHOST}; PROXY ${PACPROXYHOST}; DIRECT\";
+  }" >> "$PACFILE"
+
+echo "
   var curdomain = shost.match(/(.*)\\.([^.]+\$)/);
   if (!curdomain || !curdomain[2]) {return \"DIRECT\";}
   var curhost = curdomain[1];
@@ -109,9 +119,8 @@ echo "  if (domains.length < 10) return \"DIRECT\"; // list is broken
     // WARNING! WARNING! WARNING!
     // You should NOT use these proxy servers outside of PAC file!
     // DO NOT enter it manually in any program!
-    // By doing this, you harm the service!" >> "$PACFILE"
+    // By doing this, you harm the service!" | tee -a "$PACFILE" "$PACFILE_NOSSL" >/dev/null
 
-cp "$PACFILE" "$PACFILE_NOSSL"
 echo "    return \"HTTPS ${PACHTTPSHOST}; PROXY ${PACPROXYHOST}; DIRECT\";" >> "$PACFILE"
 echo "    return \"PROXY ${PACPROXYHOST}; DIRECT\";" >> "$PACFILE_NOSSL"
 
