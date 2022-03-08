@@ -81,7 +81,7 @@ echo "
   fbtw = ['twitter.com', 'twimg.com', 't.co',
           'facebook.com', 'fbcdn.net'];
   if (fbtw.indexOf(shost) !== -1) {
-    return \"HTTPS ${PACFBTWHOST}; PROXY ${PACPROXYHOST}; DIRECT\";
+    return \"HTTPS ${PACFBTWHOST}; DIRECT\";
   }" >> "$PACFILE"
 
 echo "
