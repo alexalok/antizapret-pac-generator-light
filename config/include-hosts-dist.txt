@@ -11,3 +11,4 @@ lib.ru
 fbcdn.net
 t.co
 twimg.com
+theins.ru
