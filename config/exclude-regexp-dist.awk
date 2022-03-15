@@ -11,8 +11,7 @@
 (/\.dcge\.biz/) {next}
 (/fonbet/) {next}
 (/betcity/) {next}
-(/zerkalo\.io/) {print}
-(/zerkalo/) {next}
+(/zerkalo/ && !/zerkalo\.io/) {next}
 (/zigzag/) {next}
 (/zenitbet/) {next}
 (/winline/) {next}
