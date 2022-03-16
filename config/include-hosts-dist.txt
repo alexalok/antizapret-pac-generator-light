@@ -13,4 +13,5 @@ messenger.com
 fb.com
 t.co
 twimg.com
+cdninstagram.com
 theins.ru
