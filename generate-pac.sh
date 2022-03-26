@@ -67,7 +67,7 @@ echo "  if (domains.length < 10) return \"DIRECT\"; // list is broken
   }
 
   var shost;
-  if (/\.(ru|co|cu|com|info|net|org|gov|edu|int|mil|biz|pp|ne|msk|spb|nnov|od|in|ho|cc|dn|i|tut|v|dp|sl|ddns|dyndns|livejournal|herokuapp|azurewebsites|cloudfront|ucoz|3dn|nov|linode|amazonaws|sl-reverse|kiev|beget|kirov|akadns|scaleway|fastly|hldns|appspot|my1|hwcdn|deviantart|wixmp|netdna-ssl|brightcove|berlogovo|edgecastcdn|trafficmanager|iwara|pximg|github|hopto|u-stream)\.[^.]+$/.test(host))
+  if (/\.(ru|co|cu|com|info|net|org|gov|edu|int|mil|biz|pp|ne|msk|spb|nnov|od|in|ho|cc|dn|i|tut|v|dp|sl|ddns|dyndns|livejournal|herokuapp|azurewebsites|cloudfront|ucoz|3dn|nov|linode|amazonaws|sl-reverse|kiev|beget|kirov|akadns|scaleway|fastly|hldns|appspot|my1|hwcdn|deviantart|wixmp|netdna-ssl|brightcove|berlogovo|edgecastcdn|trafficmanager|iwara|pximg|github|hopto|u-stream|google)\.[^.]+$/.test(host))
     shost = host.replace(/(.+)\.([^.]+\.[^.]+\.[^.]+$)/, \"\$2\");
   else
     shost = host.replace(/(.+)\.([^.]+\.[^.]+$)/, \"\$2\");
