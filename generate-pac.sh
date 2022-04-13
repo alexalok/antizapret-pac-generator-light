@@ -80,7 +80,8 @@ cp "$PACFILE" "$PACFILE_NOSSL"
 echo "
   fbtw = ['twitter.com', 'twimg.com', 't.co',
           'facebook.com', 'fbcdn.net',
-          'instagram.com', 'cdninstagram.com'];
+          'instagram.com', 'cdninstagram.com',
+          'fb.com', 'messenger.com'];
   if (fbtw.indexOf(shost) !== -1) {
     return \"HTTPS ${PACFBTWHOST}; DIRECT\";
   }" >> "$PACFILE"
