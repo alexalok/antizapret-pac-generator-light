@@ -183,3 +183,5 @@
 /^pinupbk[0-9]{2,3}\./ {next}
 /^zfilm-hd-[0-9]{3,4}\./ {next}
 /appspot\.online/ {next}
+/alko.*[0-9]{2,3}\./ {next}
+/alco.*[0-9]{2,3}\./ {next}
