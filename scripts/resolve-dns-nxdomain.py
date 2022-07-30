@@ -4,6 +4,7 @@ import sys
 import os
 import asyncio
 import dns.resolver
+import dns.rdatatype
 import dns.asyncresolver
 import dns.exception
 import dns._asyncio_backend
@@ -19,6 +20,10 @@ FINAL_PASS_TIMEOUT = 10
 FINAL_PASS_CONCURRENCY = 35
 
 
+NS_FILTER_SUBSTRINGS = ("parking", "expired", ".afternic.com", "parklogic", ".parktons.com",
+                        ".above.com", ".ztomy.com", ".notneiron.com", ".ibspark.com", ".bodis.com",
+                        ".example.com")
+
 class AZResolver(dns.asyncresolver.Resolver):
     def __init__(self, *args, **kwargs):
         self.limitConcurrency(25) # default limit
@@ -31,7 +36,11 @@ class AZResolver(dns.asyncresolver.Resolver):
         async with self.limitingsemaphore:
             try:
                 #print(domain, file=sys.stderr)
-                await self.resolve(domain)
+                domain_nses = await self.resolve(domain, dns.rdatatype.NS)
+                for ns in domain_nses:
+                    # Filter out expired and parked domains
+                    if any(filtered_substr in str(ns) for filtered_substr in NS_FILTER_SUBSTRINGS):
+                        return domain
 
             except (dns.exception.Timeout, dns.resolver.NXDOMAIN,
                     dns.resolver.YXDOMAIN, dns.resolver.NoNameservers):
