@@ -185,3 +185,15 @@
 /appspot\.online/ {next}
 /alko.*[0-9]{2,3}\./ {next}
 /alco.*[0-9]{2,3}\./ {next}
+/x-1xbet-/ {next}
+/wylkan/ {next}
+/wull[kc]an/ {next}
+/wlnstar/ {next}
+/wlnsport/ {next}
+/winmaster/ {next}
+/winbets/ {next}
+/winbetline/ {next}
+/vigronn/ {next}
+/viagravnn/ {next}
+/vegas-grand/ {next}
+/^vavada/ {next}
