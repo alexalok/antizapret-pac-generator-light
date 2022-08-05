@@ -81,7 +81,9 @@ echo "
   fbtw = ['twitter.com', 'twimg.com', 't.co',
           'facebook.com', 'fbcdn.net',
           'instagram.com', 'cdninstagram.com',
-          'fb.com', 'messenger.com'];
+          'fb.com', 'messenger.com',
+          'play.google.com', 'yt3.ggpht.com', 'yt4.ggpht.com'
+          ];
   if (fbtw.indexOf(shost) !== -1) {
     return \"HTTPS ${PACFBTWHOST}; DIRECT\";
   }" >> "$PACFILE"
