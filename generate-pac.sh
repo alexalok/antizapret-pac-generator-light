@@ -82,7 +82,7 @@ echo "
           'facebook.com', 'fbcdn.net',
           'instagram.com', 'cdninstagram.com',
           'fb.com', 'messenger.com',
-          'play.google.com', 'yt3.ggpht.com'
+          'yt3.ggpht.com'
           ];
   if (fbtw.indexOf(shost) !== -1) {
     return \"HTTPS ${PACFBTWHOST}; DIRECT\";
