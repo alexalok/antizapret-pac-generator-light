@@ -1,3 +1,4 @@
+# NOTE: only ZONES should be here. Not subdomains.
 youtube.com
 googleusercontent.com
 pornhub.com
@@ -6,10 +7,7 @@ youtube.com
 youtu.be
 ytimg.com
 cloudfront.net
-yt3.ggpht.com
-yt4.ggpht.com
-s.ytimg.com
-i.ytimg.com
+ytimg.com
 article31.club
 akamaiedge.net
 akamai.net
@@ -25,7 +23,7 @@ nudism.ga
 zenitbet44.com
 leninjiv.com
 1sx522.com
-www.rutinadew.com
+rutinadew.com
 fespal.website
 igrovyeavtomatynadengi.com
 1-x520.com
@@ -37,9 +35,9 @@ ural.ru
 coldfilm.ws
 coldfilm.cc
 coldfilm.ru
-rt.pornhub.com
-ru.pornhub.com
-www.pornhub.com
+pornhub.com
 amazonaws.com
 azureedge.net
 web.app
+ftcdn.net
+ggpht.com
