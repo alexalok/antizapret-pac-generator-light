@@ -42,3 +42,4 @@ web.app
 ftcdn.net
 ggpht.com
 bizml.ru
+ampproject.org
