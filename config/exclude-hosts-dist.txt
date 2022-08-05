@@ -41,3 +41,4 @@ azureedge.net
 web.app
 ftcdn.net
 ggpht.com
+bizml.ru
