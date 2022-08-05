@@ -42,3 +42,4 @@ ru.pornhub.com
 www.pornhub.com
 amazonaws.com
 azureedge.net
+web.app
