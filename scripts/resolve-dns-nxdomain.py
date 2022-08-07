@@ -24,6 +24,7 @@ FINAL_PASS_CONCURRENCY = 35
 # resolver loop
 TASK_AMOUNT_MULTIPLIER = 5
 
+# Parked and expired domains NS record substrings
 NS_FILTER_SUBSTRINGS = ("parking", "expired", ".afternic.com", "parklogic", ".parktons.com",
                         ".above.com", ".ztomy.com", ".notneiron.com", ".ibspark.com", ".bodis.com",
                         ".example.com")
