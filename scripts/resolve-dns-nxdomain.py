@@ -63,7 +63,9 @@ async def runTasksWithProgress(tasks, tasknumber, concurrent_tasks):
     old_progress = 0
     ret = []
 
+    # this line actually "runs" coroutine
     tasklist = list(itertools.islice(tasks, concurrent_tasks))
+    tasklist_next = []
     while tasklist:
         for task in asyncio.as_completed(tasklist):
             ret.append(await task)
@@ -71,7 +73,12 @@ async def runTasksWithProgress(tasks, tasknumber, concurrent_tasks):
             if old_progress < progress:
                 print("{}%...".format(progress), end='\r', file=sys.stderr, flush=True)
                 old_progress = progress
-        tasklist = list(itertools.islice(tasks, concurrent_tasks))
+
+            for newtask in tasks: # this line actually "runs" coroutine
+                tasklist_next.append(newtask)
+                break
+        tasklist = tasklist_next
+        tasklist_next = []
 
     print(file=sys.stderr)
     return ret
