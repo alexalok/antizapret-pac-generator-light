@@ -40,7 +40,6 @@ amazonaws.com
 azureedge.net
 web.app
 ftcdn.net
-ggpht.com
 bizml.ru
 ampproject.org
 r.appspot.com
