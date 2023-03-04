@@ -244,3 +244,5 @@
 /^bestpharma/ {next}
 /^balashiha-grand/ {next}
 /^apl[0-9]*\./ {next}
+/dot-xenon-antonym/ {next}
+length($1) > 30 {next}
