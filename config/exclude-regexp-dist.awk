@@ -245,4 +245,14 @@
 /^balashiha-grand/ {next}
 /^apl[0-9]*\./ {next}
 /dot-xenon-antonym/ {next}
+/^zfilm-/ {next}
+/^1win-/ {next}
+/1-{0,1}xredir/ {next}
+/1-{0,1}slot/ {next}
+/1-{0,1}sport/ {next}
+/apteka/ {next}
+/do[ck]tor/ {next}
+/^booi/ {next}
+/^brill/ {next}
+/goldfishka/ {next}
 length($1) > 30 && !/wixmp/ {next}
