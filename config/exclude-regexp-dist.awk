@@ -255,4 +255,26 @@
 /^booi/ {next}
 /^brill/ {next}
 /goldfishka/ {next}
+/^777/ {next}
+/^888/ {next}
+/^apl[0-9]/ {next}
+/^aviator/ {next}
+/^azimut/ {next}
+/^azino/ {next}
+/^bestseeds-/ {next}
+/^betwinnwer-/ {next}
+/^betwin-/ {next}
+/^bitstarz/ {next}
+/^blacksprut/ {next}
+/^bongacams[0-9]/ {next}
+/^bublik/ {next}
+/^cabura/ {next}
+/^champion-/ {next}
+/^fort-prav/ {next}
+/^fortprav/ {next}
+/^g-trade/ {next}
+/^indi[0-9]/ {next}
+/^intimp[0-9]/ {next}
+/^izzi-/ {next}
+
 length($1) > 30 && !/wixmp/ {next}
