@@ -276,5 +276,25 @@
 /^indi[0-9]/ {next}
 /^intimp[0-9]/ {next}
 /^izzi-/ {next}
+/zfilm-hd/ {next}
+/zfilm[0-9]/ {next}
+/zhahach/ {next}
+/zeralo-v-a-v-a-d-a/ {next}
+/vavada/ {next}
+/wawada/ {next}
+/zaliv-/ {next}
+/zakon-kamennyh-dzhungley/ {next}
+/zakis-/ {next}
+/^zakis/ {next}
+/^zagon/ {next}
+/zarabot/ {next}
+/^vzlom/ {next}
+/^v[uy][l1][ck]/ {next}
+/^vuzinfo/ {next}
+/^up-x/ {next}
+/^up[0-9]/ {next}
+/^u[0-9][^0-9]/ {next}
+/^trade/ {next}
+
 
 length($1) > 30 && !/wixmp/ {next}
