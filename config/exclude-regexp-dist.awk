@@ -295,6 +295,11 @@
 /^up[0-9]/ {next}
 /^u[0-9][^0-9]/ {next}
 /^trade/ {next}
+/rastishki/ {next}
+/rasta-/ {next}
+/quantum/ {next}
+/^prava/ {next}
 
 
 length($1) > 30 && !/wixmp/ {next}
+
