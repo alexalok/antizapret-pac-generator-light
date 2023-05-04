@@ -299,6 +299,10 @@
 /rasta-/ {next}
 /quantum/ {next}
 /^prava/ {next}
+/1xbet/ {next}
+/1-xred/ {next}
+/1xslo/ {next}
+/^202[0123]/ {next}
 
 
 length($1) > 30 && !/wixmp/ {next}
