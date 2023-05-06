@@ -303,6 +303,18 @@
 /1-xred/ {next}
 /1xslo/ {next}
 /^202[0123]/ {next}
+/^apl/ {next}
+/^apparat/ {next}
+/^avalon/ {next}
+/^azino/ {next}
+/^azzino/ {next}
+/^bank[^\.]/ {next}
+/^baskino/ {next}
+/^bbrrigght/ {next}
+/^beer/ {next}
+/^belochka/ {next}
+/^bet/ {next}
+/^bonus/ {next}
 
 
 length($1) > 30 && !/wixmp/ {next}
