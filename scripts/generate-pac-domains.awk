@@ -1,6 +1,9 @@
 {
     domainzone = gensub(/(.*)\.([^.]+$)/, "\\2", 1)
     domainname = gensub(/(.*)\.([^.]+$)/, "\\1", 1)
+}
+    @include "temp/replace-common-sequences.awk"
+{
     domainlength = length(domainname)
     domainarray[domainzone][domainlength][domainname] = domainname
     #print "adding", $0, ":", domainzone, domainlength, domainname

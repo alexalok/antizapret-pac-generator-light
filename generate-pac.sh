@@ -4,6 +4,8 @@ set -e
 source config/config.sh
 echo -n > "$PACFILE"
 
+python3 scripts/topsequences.py result/hostlist_zones.txt temp/replace-common-sequences.awk temp/pacpatterns.js
+
 # .pac header
 echo "// ProstoVPN.AntiZapret PAC-host File
 // Generated on $(date), by https://bitbucket.org/anticensority/antizapret-pac-generator-light/
@@ -27,12 +29,22 @@ sort -Vu temp/include-ips.txt result/iplist_blockedbyip_noid2971_collapsed.txt |
 SPECIAL="$(cat result/iplist_special_range.txt | xargs -n1 sipcalc | \
     awk 'BEGIN {notfirst=0} /Network address/ {n=$4} /Network mask \(bits\)/ {if (notfirst) {printf ","} printf "[\"%s\", %s]", n, $5; notfirst=1;}')"
 
+PATTERNS=$(cat temp/pacpatterns.js)
+
 echo "var special = [
 $SPECIAL
 ];
 var az_initialized = 0;
 // CIDR to netmask, for special
 function nmfc(b) {var m=[];for(var i=0;i<4;i++) {var n=Math.min(b,8); m.push(256-Math.pow(2, 8-n)); b-=n;} return m.join('.');}
+// replace repeating sequences in domain
+function patternreplace(s) {
+  var patterns = $PATTERNS;
+  for (pattern in patterns) {
+    s = s.split(patterns[pattern]).join(pattern);
+  }
+  return s;
+}
 
 function FindProxyForURL(url, host) {" >> "$PACFILE"
 
@@ -93,6 +105,7 @@ echo "
   if (!curdomain || !curdomain[2]) {return \"DIRECT\";}
   var curhost = curdomain[1];
   var curzone = curdomain[2];
+  curhost = patternreplace(curhost);
   var curarr = []; // dummy empty array
   if (domains.hasOwnProperty(curzone) && domains[curzone].hasOwnProperty(curhost.length)) {
     if (typeof domains[curzone][curhost.length] === 'string') {
