@@ -309,7 +309,6 @@
 /^azino/ {next}
 /^azzino/ {next}
 /^bank[^\.]/ {next}
-/^baskino/ {next}
 /^bbrrigght/ {next}
 /^beer/ {next}
 /^belochka/ {next}
