@@ -47,7 +47,7 @@ finallist = list(patternhit)[-1 * len(wordreplace):]
 with open(sys.argv[2], "w") as awkfile:
     print("{", file=awkfile)
     for i, w in enumerate(finallist):
-        print('gsub(/{}/, "{}", domainname)'.format(w, wordreplace[i]), file=awkfile)
+        print('gsub(/{}/, "{}", domainname)'.format(w.replace(".", "\\."), wordreplace[i]), file=awkfile)
     print("}", file=awkfile)
 
 with open(sys.argv[3], "w") as pacfile:
