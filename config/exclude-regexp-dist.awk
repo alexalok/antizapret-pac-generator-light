@@ -315,6 +315,8 @@
 /^bet/ {next}
 /^bonus/ {next}
 
+# uuugh...
+/^[0-9]/ {next}
 
 length($1) > 30 && !/wixmp/ {next}
 
