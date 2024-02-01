@@ -21,3 +21,8 @@ bbci.co.uk
 acf.international
 radiojar.com
 rebrand.ly
+chat.openai.com
+oaistatic.com
+oaiusercontent.com
+api.github.com
+wise.com
