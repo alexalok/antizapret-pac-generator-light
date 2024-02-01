@@ -2,6 +2,7 @@
 
 set -e
 
+LANG=C.UTF-8
 HERE="$(dirname "$(readlink -f "${0}")")"
 cd "$HERE"
 
