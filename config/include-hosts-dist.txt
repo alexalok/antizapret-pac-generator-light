@@ -26,3 +26,5 @@ oaistatic.com
 oaiusercontent.com
 api.github.com
 wise.com
+play.google.com
+dl.uploadgram.me
